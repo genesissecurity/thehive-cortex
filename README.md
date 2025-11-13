@@ -130,6 +130,9 @@ https://thehive.yourdomain.com
 ## ♻️ 9. Atualizar API Key futuramente
 
 ```
+Após criar o seu usuario e criar um usuario para integração, gere uma apikey e copie ela
+Edite .env
+E cole a api key em CORTEX_KEY=
 docker compose restart thehive
 ```
 
@@ -145,6 +148,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

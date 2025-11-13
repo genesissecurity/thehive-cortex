@@ -70,9 +70,10 @@ JOB_DIRECTORY=/opt/cortex/jobs
 
 ```
 cd vol/nginx
-Edite os arquivos cortex.conf e thehive.conf
-Ajuste server_name cortex.yourdomain.com;
-Ajuste server_name thehive.yourdomain.com;
+nano cortex.conf
+Altere > server_name cortex.yourdomain.com;
+nano thehive.conf
+Altere > server_name thehive.yourdomain.com;
 ```
 
 ## 🧾 6. Ajustar permissões
@@ -144,6 +145,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

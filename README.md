@@ -27,8 +27,8 @@ docker compose version
 ## 📥 1. Clonar o repositório
 
 ```
-git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-cd SEU_REPOSITORIO
+git clone https://github.com/genesissecurity/thehive-cortex
+cd thehive-cortex
 ```
 
 ## 🌐 2. Criar a Docker network `proxy`
@@ -62,6 +62,15 @@ openssl req -new -x509   -key vol/ssl/nginx-selfsigned.key   -out vol/ssl/nginx-
 ```
 CORTEX_KEY=SUA_API_KEY_AQUI
 JOB_DIRECTORY=/opt/cortex/jobs
+```
+
+## 🔑 5.2 Configurar `cortex.conf e thehive.conf`
+
+```
+cd vol/nginx
+Edite os arquivos cortex.conf e thehive.conf
+Ajuste server_name cortex.yourdomain.com;
+Ajuste server_name thehive.yourdomain.com;
 ```
 
 ## 🧾 6. Ajustar permissões
@@ -112,7 +121,7 @@ http://SEU_SERVIDOR:9000
 
 Via Nginx:
 ```
-https://SEU_SERVIDOR
+https://thehive.yourdomain.com
 ```
 
 ## ♻️ 9. Atualizar API Key futuramente
@@ -133,4 +142,5 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 

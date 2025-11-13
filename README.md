@@ -1,6 +1,6 @@
 # 🧰 TheHive + Cortex + Elasticsearch + Cassandra + Nginx (HTTPS)
 
-Stack Docker para laboratório de resposta a incidentes, com:
+Stack Docker com:
 
 - TheHive 4
 - Cortex
@@ -142,5 +142,6 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 

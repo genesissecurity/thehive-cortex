@@ -1,4 +1,4 @@
-# 🧰 TheHive + Cortex + Elasticsearch + Cassandra + Nginx (HTTPS)
+# TheHive + Cortex + Elasticsearch + Cassandra + Nginx (HTTPS)
 
 Stack Docker com:
 
@@ -144,6 +144,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

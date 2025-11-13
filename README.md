@@ -57,7 +57,9 @@ openssl genrsa -out vol/ssl/nginx-selfsigned.key 2048
 openssl req -new -x509   -key vol/ssl/nginx-selfsigned.key   -out vol/ssl/nginx-selfsigned.crt   -days 365
 ```
 
-## 🔑 5. Configurar `.env`
+## 🔑 5. Ajustar arquivos de configuração
+
+### 🔑 5.1 Configurar `.env`
 
 ```
 CORTEX_KEY=SUA_API_KEY_AQUI
@@ -142,6 +144,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

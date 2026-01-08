@@ -32,7 +32,25 @@ chmod +x thehive_cortex.sh
 ./thehive_cortex.sh
 ```
 
-## ♻️ 2. Atualizar API Key futuramente
+## 🌍 2. Acessar
+
+TheHive:
+```
+http://SEU_SERVIDOR:9000
+```
+
+Cortex:
+```
+http://SEU_SERVIDOR:9001
+```
+
+Via Nginx:
+```
+https://thehive.yourdomain.com
+https://cortex.yourdomain.com
+```
+
+## ♻️ 3. Atualizar API Key futuramente
 
 ```
 Após criar o seu usuario e criar um usuario para integração, gere uma apikey e copie ela
@@ -41,7 +59,7 @@ E cole a api key em CORTEX_KEY=
 docker compose restart thehive
 ```
 
-## 🛠️ 3. Troubleshooting
+## 🛠️ 4. Troubleshooting
 
 ### TheHive reiniciando
 → `.env` inválido
@@ -53,6 +71,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

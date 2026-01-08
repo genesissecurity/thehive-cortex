@@ -24,110 +24,15 @@ docker --version
 docker compose version
 ```
 
-## 📥 1. Clonar o repositório
+## 📥 1. Baixar o Script de Instalação
 
 ```
-git clone https://github.com/genesissecurity/thehive-cortex
-cd thehive-cortex
+wget https://packages.genesissecurity.com.br/thehive/thehive_cortex.sh
+chmod +x thehive_cortex.sh
+./thehive_cortex.sh
 ```
 
-## 🌐 2. Criar a Docker network `proxy`
-
-```
-docker network create proxy
-```
-
-## 📂 3. Garantir a estrutura de volumes
-
-```
-mkdir -p vol/cassandra vol/elasticsearch vol/nginx vol/ssl vol/thehive
-```
-
-## 🔐 4. Criar os certificados autoassinados (SSL)
-
-### 4.1 Chave privada
-
-```
-openssl genrsa -out vol/ssl/nginx-selfsigned.key 2048
-```
-
-### 4.2 Certificado
-
-```
-openssl req -new -x509   -key vol/ssl/nginx-selfsigned.key   -out vol/ssl/nginx-selfsigned.crt   -days 365
-```
-
-## 🔑 5. Ajustar arquivos de configuração
-
-### 🔑 5.1 Configurar `.env`
-
-```
-CORTEX_KEY=SUA_API_KEY_AQUI
-JOB_DIRECTORY=/opt/cortex/jobs
-```
-
-## 🔑 5.2 Configurar `cortex.conf e thehive.conf`
-
-```
-cd vol/nginx
-nano cortex.conf
-Altere > server_name cortex.yourdomain.com;
-nano thehive.conf
-Altere > server_name thehive.yourdomain.com;
-```
-
-## 🧾 6. Ajustar permissões
-
-### THEHIVE
-```
-chown -R 1000:1000 vol/thehive
-chmod -R 775 vol/thehive
-```
-
-### ELASTICSEARCH
-```
-chown -R 1000:1000 vol/elasticsearch
-chmod -R 775 vol/elasticsearch
-```
-
-### CASSANDRA
-```
-chown -R 999:999 vol/cassandra
-chmod -R 700 vol/cassandra
-```
-
-### NGINX
-```
-chown -R 33:33 vol/nginx
-chmod -R 755 vol/nginx
-```
-
-### SSL
-```
-chown -R 33:33 vol/ssl
-chmod 600 vol/ssl/*.key
-chmod 644 vol/ssl/*.crt
-```
-
-## 🚀 7. Subir o ambiente
-
-```
-docker compose up -d
-```
-
-## 🌍 8. Acessar
-
-TheHive:
-```
-http://SEU_SERVIDOR:9000
-```
-
-Via Nginx:
-```
-https://thehive.yourdomain.com
-```
-
-## ♻️ 9. Atualizar API Key futuramente
+## ♻️ 2. Atualizar API Key futuramente
 
 ```
 Após criar o seu usuario e criar um usuario para integração, gere uma apikey e copie ela
@@ -136,7 +41,7 @@ E cole a api key em CORTEX_KEY=
 docker compose restart thehive
 ```
 
-## 🛠️ 10. Troubleshooting
+## 🛠️ 3. Troubleshooting
 
 ### TheHive reiniciando
 → `.env` inválido
@@ -148,6 +53,7 @@ chown -R 1000:1000 vol/thehive
 chmod -R 775 vol/thehive
 docker compose restart thehive
 ```
+
 
 
 

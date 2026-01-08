@@ -76,6 +76,8 @@ services:
     image: thehiveproject/cortex:latest
     depends_on:
       - elasticsearch
+    ports:
+      - "9001:9001"
     networks:
       - proxy
       - backend
@@ -91,3 +93,4 @@ networks:
   backend:
   proxy:
     external: true
+
